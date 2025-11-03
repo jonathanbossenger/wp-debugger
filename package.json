@@ -1,0 +1,22 @@
+{
+  "name": "wp-debugger",
+  "version": "1.0.0",
+  "description": "A desktop app that enables step debugging in a local WordPress installation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start-dev": "electron . --no-sandbox",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "debugging",
+    "electron",
+    "phpdbg"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^39.0.0"
+  }
+}
