@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress Debugger</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>WordPress Debugger</h1>
+      <button id="select-dir-btn" class="btn btn-primary">Select WordPress Directory</button>
+    </div>
+
+    <div class="main-content">
+      <!-- Sidebar with file tree -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h3>Files</h3>
+        </div>
+        <div id="file-tree" class="file-tree">
+          <p class="placeholder">No directory selected</p>
+        </div>
+      </div>
+
+      <!-- Editor area -->
+      <div class="editor-container">
+        <div class="editor-header">
+          <span id="current-file">No file opened</span>
+          <button id="close-file-btn" class="btn btn-small" style="display: none;">Close</button>
+        </div>
+        <div class="editor-wrapper">
+          <div class="line-numbers" id="line-numbers"></div>
+          <div class="code-area">
+            <pre id="code-display"><code>Select a file from the tree to view its contents</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Debug panel -->
+      <div class="debug-panel">
+        <div class="panel-header">
+          <h3>Debug Controls</h3>
+        </div>
+        
+        <div class="debug-controls">
+          <button id="start-debug-btn" class="btn btn-success" disabled>Start Debugging</button>
+          <button id="step-into-btn" class="btn" disabled>Step Into</button>
+          <button id="step-over-btn" class="btn" disabled>Step Over</button>
+          <button id="step-out-btn" class="btn" disabled>Step Out</button>
+          <button id="continue-btn" class="btn" disabled>Continue</button>
+          <button id="stop-debug-btn" class="btn btn-danger" disabled>Stop</button>
+        </div>
+
+        <div class="breakpoints-section">
+          <h4>Breakpoints</h4>
+          <div id="breakpoints-list" class="breakpoints-list">
+            <p class="placeholder">No breakpoints set</p>
+          </div>
+        </div>
+
+        <div class="variables-section">
+          <h4>Variables</h4>
+          <div id="variables-list" class="variables-list">
+            <p class="placeholder">Start debugging to see variables</p>
+          </div>
+        </div>
+
+        <div class="debug-info">
+          <h4>Debug Output</h4>
+          <div id="debug-output" class="debug-output">
+            <p class="placeholder">Debug information will appear here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status bar -->
+    <div class="status-bar">
+      <span id="status-text">Ready</span>
+      <span id="wordpress-status"></span>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
